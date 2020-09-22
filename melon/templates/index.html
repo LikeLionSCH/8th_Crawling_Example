@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawling</title>
+</head>
+
+<body>
+    <h1>Welcome to Crawling Hell World</h1>
+    <a href="{% url 'crawling'%}">노래! 갖고와!</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> 순위 </th>
+                <th> 곡명 </th>
+                <th> 가수 </th>
+                <th> 앨범명 </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for song in songs %}
+            <tr>
+                <th> {{ song.rank}} </th>
+                <td> {{ song.name }} </td>
+                <td> {{ song.singer }} </td>
+                <td> {{ song.album }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
